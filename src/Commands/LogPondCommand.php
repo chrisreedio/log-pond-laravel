@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace ChrisReedIO\LogPond\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LogPondCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'log-pond-laravel';
 
     public $description = 'My command';
 
