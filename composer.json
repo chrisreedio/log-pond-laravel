@@ -1,10 +1,13 @@
 {
-    "name": "chrisreedio/log-pond-laravel",
+    "name": "chrisreedio/laravel-logpond",
     "description": "Log Pond Laravel Logging Package",
     "keywords": [
         "Chris Reed",
         "laravel",
-        "log-pond-laravel"
+        "logging",
+        "log-pond",
+        "laravel-logpond",
+        "logpond-laravel"
     ],
     "homepage": "https://github.com/chrisreedio/log-pond-laravel",
     "license": "MIT",

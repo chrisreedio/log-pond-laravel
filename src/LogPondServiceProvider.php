@@ -16,8 +16,8 @@ class LogPondServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('log-pond-laravel')
-            // ->hasConfigFile()
+            ->name('laravel-logpond')
+            ->hasConfigFile('logpond')
             // ->hasViews()
             // ->hasMigration('create_log-pond-laravel_table')
             ->hasCommand(LogPondTestCommand::class);
