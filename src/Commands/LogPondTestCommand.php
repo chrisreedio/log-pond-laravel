@@ -2,7 +2,6 @@
 
 namespace ChrisReedIO\LogPond\Commands;
 
-use ChrisReedIO\LogPond\Facades\LogPond;
 use ChrisReedIO\LogPond\LogPondConnector;
 use ChrisReedIO\LogPond\Requests\PostSiteLogEntryRequest;
 use Illuminate\Console\Command;

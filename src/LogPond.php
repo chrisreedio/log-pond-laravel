@@ -3,7 +3,7 @@
 namespace ChrisReedIO\LogPond;
 
 /**
- * @deprecated 
+ * @deprecated
  */
 class LogPond
 {

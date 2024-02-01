@@ -8,8 +8,7 @@ use Saloon\Http\Connector;
 
 class LogPondConnector extends Connector
 {
-
-    public function __construct(protected readonly string $secret, protected string $host = "")
+    public function __construct(protected readonly string $secret, protected string $host = '')
     {
     }
 
@@ -19,11 +18,11 @@ class LogPondConnector extends Connector
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function resolveBaseUrl(): string
     {
-        return "https://" . $this->host . "/api";
+        return 'https://'.$this->host.'/api';
     }
 
     protected function defaultConfig(): array
@@ -40,5 +39,4 @@ class LogPondConnector extends Connector
             'Accept' => 'application/json',
         ];
     }
-
 }
