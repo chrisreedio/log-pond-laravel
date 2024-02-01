@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Log\Handlers;
+namespace ChrisReedIO\LogPond\Handlers;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
