@@ -10,14 +10,14 @@ class LogPondHandler extends AbstractProcessingHandler
 {
     public function __construct(
         protected string $host,
-        int | string | Level $level = Level::Debug,
+        int|string|Level $level = Level::Debug,
         bool $bubble = true)
     {
         parent::__construct($level, $bubble);
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     protected function write(LogRecord $record): void
     {
