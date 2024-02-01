@@ -4,7 +4,7 @@ namespace ChrisReedIO\LogPond;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\LogPond\Commands\LogPondCommand;
+use ChrisReedIO\LogPond\Commands\LogPondTestCommand;
 
 class LogPondServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +17,9 @@ class LogPondServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('log-pond-laravel')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_log-pond-laravel_table')
-            ->hasCommand(LogPondCommand::class);
+            // ->hasConfigFile()
+            // ->hasViews()
+            // ->hasMigration('create_log-pond-laravel_table')
+            ->hasCommand(LogPondTestCommand::class);
     }
 }
