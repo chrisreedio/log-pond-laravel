@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Facade;
  */
 class LogPond extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
-        return \ChrisReedIO\LogPond\LogPond::class;
+        return \ChrisReedIO\LogPond\LogPondConnector::class;
     }
 }
