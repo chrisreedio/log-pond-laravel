@@ -9,8 +9,16 @@ use Saloon\Http\Connector;
 class LogPondConnector extends Connector
 {
 
-    public function __construct(protected readonly string $secret, protected string $host = "")
+    public function __construct(protected ?string $secret = null, protected ?string $host = null)
     {
+        if ($this->host === null) {
+            // TODO: Add a final hard set fallback for the Cloud URL
+            $this->host = config('logpond.host') ?? config('logging.channels.logpond.with.host');
+        }
+
+        if ($this->secret === null) {
+            $this->secret = config('logpond.secret') ?? config('logging.channels.logpond.with.secret');
+        }
     }
 
     protected function defaultAuth(): ?Authenticator
@@ -23,7 +31,7 @@ class LogPondConnector extends Connector
      */
     public function resolveBaseUrl(): string
     {
-        return "https://" . $this->host . "/api";
+        return $this->host . "/api";
     }
 
     protected function defaultConfig(): array
@@ -40,5 +48,12 @@ class LogPondConnector extends Connector
             'Accept' => 'application/json',
         ];
     }
+
+    //region Resources
+    public function sites(?string $siteId = null): Resources\SiteResource
+    {
+        return new Resources\SiteResource($this);
+    }
+    //endregion
 
 }

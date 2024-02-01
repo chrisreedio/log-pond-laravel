@@ -2,6 +2,7 @@
 
 namespace ChrisReedIO\LogPond\Commands;
 
+use ChrisReedIO\LogPond\Enums\LogLevels;
 use ChrisReedIO\LogPond\Facades\LogPond;
 use ChrisReedIO\LogPond\LogPondConnector;
 use ChrisReedIO\LogPond\Requests\PostSiteLogEntryRequest;
@@ -15,9 +16,7 @@ class LogPondTestCommand extends Command
 
     public function handle(): int
     {
-        $connector = new LogPondConnector('MY-SECRET-KEY', 'logpond-app.local.winux.io');
-        $request = new PostSiteLogEntryRequest(1, ['message' => 'Hello, Log Pond!']);
-        $response = $connector->send($request);
+        $response = LogPond::sites()->log(LogLevels::INFO->value, 'Test Log Entry', ['username' => 'testuser1']);
         $this->info('Response from Log Pond:');
         dump($response->json());
         $this->comment('All done');

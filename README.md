@@ -22,12 +22,13 @@ Add the following logging channel to your `config/logging.php` file:
 ```php
 'channels' => [
     // ... Other channels
-    'log-pond' => [
+    'logpond' => [
         'driver' => 'monolog',
         'level' => env('LOG_LEVEL', 'debug'),
         'handler' => ChrisReedIO\LogPond\Handlers\LogPondHandler::class,
         'with' => [
             'host' => env('LOG_POND_HOST'),
+            'site' => env('LOG_POND_SITE'),
             'secret' => env('LOG_POND_SECRET'),
         ],
     ],
@@ -35,13 +36,13 @@ Add the following logging channel to your `config/logging.php` file:
 ],
 ```
 
-Once the `log-pond` channel is added, you may now add it to the stack channel list like so:
+Once the `logpond` channel is added, you may now add it to the stack channel list like so:
 
 ```php
 'channels' => [
     'stack' => [
         'driver' => 'stack',
-        'channels' => ['single', 'log-pond'],
+        'channels' => ['single', 'logpond'],
     ],
     // ... Other channels
 ],

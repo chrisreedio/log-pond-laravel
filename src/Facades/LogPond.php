@@ -2,10 +2,11 @@
 
 namespace ChrisReedIO\LogPond\Facades;
 
+use ChrisReedIO\LogPond\Resources\SiteResource;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \ChrisReedIO\LogPond\LogPond
+ * @see \ChrisReedIO\LogPond\LogPondConnector
  */
 class LogPond extends Facade
 {

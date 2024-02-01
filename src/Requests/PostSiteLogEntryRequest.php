@@ -2,14 +2,18 @@
 
 namespace ChrisReedIO\LogPond\Requests;
 
+use Saloon\Contracts\Body\HasBody;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class PostSiteLogEntryRequest extends Request
+class PostSiteLogEntryRequest extends BasePostRequest
 {
-    protected Method $method = Method::POST;
-
-    public function __construct(protected string $siteId, protected array $postData)
+    public function __construct(
+        protected string $siteId,
+        protected int $level,
+        protected string $message,
+        protected array $context = [],
+    )
     {
         // var_dump(openssl_get_cert_locations()); die;
     }
@@ -19,6 +23,16 @@ class PostSiteLogEntryRequest extends Request
      */
     public function resolveEndpoint(): string
     {
-        return "/sites/{$this->siteId}/log";
+        return "/sites/{$this->siteId}/entries";
     }
+
+    public function defaultBody(): array
+    {
+        return [
+            'level' => $this->level,
+            'message' => $this->message,
+            'context' => $this->context,
+        ];
+    }
+
 }
