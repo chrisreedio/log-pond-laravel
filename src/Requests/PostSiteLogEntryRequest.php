@@ -2,10 +2,6 @@
 
 namespace ChrisReedIO\LogPond\Requests;
 
-use Saloon\Contracts\Body\HasBody;
-use Saloon\Enums\Method;
-use Saloon\Http\Request;
-
 class PostSiteLogEntryRequest extends BasePostRequest
 {
     public function __construct(
@@ -13,8 +9,7 @@ class PostSiteLogEntryRequest extends BasePostRequest
         protected int $level,
         protected string $message,
         protected array $context = [],
-    )
-    {
+    ) {
         // var_dump(openssl_get_cert_locations()); die;
     }
 
@@ -34,5 +29,4 @@ class PostSiteLogEntryRequest extends BasePostRequest
             'context' => $this->context,
         ];
     }
-
 }

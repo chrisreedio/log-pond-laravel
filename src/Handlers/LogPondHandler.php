@@ -2,11 +2,11 @@
 
 namespace ChrisReedIO\LogPond\Handlers;
 
-use ChrisReedIO\LogPond\Enums\LogLevels;
 use ChrisReedIO\LogPond\Facades\LogPond;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
+
 use function dump;
 
 class LogPondHandler extends AbstractProcessingHandler
@@ -36,10 +36,10 @@ class LogPondHandler extends AbstractProcessingHandler
         $response = LogPond::sites()
             ->log($record->level->value, $record->message, $record->context);
         if ($response->status() !== 201) {
-            dump("LP | Failed to send log entry to Log Pond");
+            dump('LP | Failed to send log entry to Log Pond');
             dump($response->json());
         } else {
-            dump("LP | Log entry sent to Log Pond");
+            dump('LP | Log entry sent to Log Pond');
             dump($response->json());
         }
     }

@@ -20,6 +20,7 @@ class SiteResource extends BaseResource
     public function log(int $level, string $message, array $context = []): Response
     {
         $request = new PostSiteLogEntryRequest($this->siteId, $level, $message, $context);
+
         return $this->connector->send($request);
     }
 }

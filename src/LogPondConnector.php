@@ -8,7 +8,6 @@ use Saloon\Http\Connector;
 
 class LogPondConnector extends Connector
 {
-
     public function __construct(protected ?string $secret = null, protected ?string $host = null)
     {
         if ($this->host === null) {
@@ -27,11 +26,11 @@ class LogPondConnector extends Connector
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function resolveBaseUrl(): string
     {
-        return $this->host . "/api";
+        return $this->host.'/api';
     }
 
     protected function defaultConfig(): array
