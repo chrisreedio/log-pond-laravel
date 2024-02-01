@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\LogPond;
 
+use ChrisReedIO\LogPond\Commands\LogPondCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ChrisReedIO\LogPond\Commands\LogPondCommand;
 
 class LogPondServiceProvider extends PackageServiceProvider
 {

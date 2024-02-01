@@ -2,9 +2,9 @@
 
 namespace ChrisReedIO\LogPond\Tests;
 
+use ChrisReedIO\LogPond\LogPondServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use ChrisReedIO\LogPond\LogPondServiceProvider;
 
 class TestCase extends Orchestra
 {
