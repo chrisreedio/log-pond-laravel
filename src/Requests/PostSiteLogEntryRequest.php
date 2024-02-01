@@ -19,7 +19,7 @@ class PostSiteLogEntryRequest extends BasePostRequest
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function resolveEndpoint(): string
     {
